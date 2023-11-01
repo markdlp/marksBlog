@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /
-Sitemap: https://markdlp.github.io/sitemap.xml
+Sitemap: https://www.delaportas.ml/sitemap.xml
