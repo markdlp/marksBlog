@@ -64,6 +64,8 @@ jobs:
         with:
           path: ./public
 
+
+
   # Deployment job
   deploy:
     environment:
@@ -75,4 +77,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        if: ${{ github.ref == 'refs/heads/master' }}
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_branch: gh-pages
+              publish_dir: ./public
 
