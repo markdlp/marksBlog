@@ -58,6 +58,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
+      - name: Sync HEAD & gh-pages
+        run: |
+          cd public
+          git pull
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.8.0
         with:
