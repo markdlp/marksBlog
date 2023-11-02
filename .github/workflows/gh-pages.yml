@@ -52,11 +52,16 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      
-      #  uses: actions/upload-pages-artifact@v2
-      #- name: Upload artifact
-      #  with:
-      #    path: ./public
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+      - name: GitHub Push
+        uses: ad-m/github-push-action@v0.8.0
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        directory: ./public
+              
 
   # Deployment job
   deploy:
@@ -69,9 +74,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        # if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
-
