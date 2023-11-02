@@ -12,14 +12,14 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: "pages" # ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 # Default to bash
@@ -62,7 +62,6 @@ jobs:
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.DEPENDABOT_TOKEN }}
           branch: gh-pages
           directory: ./public
             
