@@ -1,2 +1,0 @@
-# marksBlog
-My Blog Site
