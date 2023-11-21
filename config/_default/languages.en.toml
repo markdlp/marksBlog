@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "Homepage"
 
 [params]
   displayName = "EN"
@@ -15,8 +15,8 @@ title = "Blowfish"
 
 [author]
   name = "Markos Delaportas"
-  image = "img/author.png"
-  headline = "Welcome"
+  image = "img/author.jpg"
+  headline = "Is making a post"
   bio = "A little bit about... "
   links = [
     { email = "mailto:markos.delaportas@gmail.com" },
