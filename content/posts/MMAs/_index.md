@@ -18,3 +18,4 @@ pets is not very feature rich at the moment. Finally I have opened a GitHub repo
 for the report that I'll eventually submit to my university and for based upon I'll be 
 credited, it can be found [here](https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials).
 
+So at first I start by designing a basic layout in CST
