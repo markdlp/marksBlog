@@ -18,4 +18,17 @@ pets is not very feature rich at the moment. Finally I have opened a GitHub repo
 for the report that I'll eventually submit to my university and for based upon I'll be 
 credited, it can be found [here](https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials).
 
-So at first I start by designing a basic layout in CST
+So at first I start by designing a basic layout in CST..
+
+for this I'll implement a three-layer structure:
+- A dielectric Substrate w/ a metal Resonance Layer
+- An Air Layer
+- A Metal Copper Back-Plate
+
+At first I'll place the substrate without the resonance layer: ![Substrate](img/substrate.bmp)
+Later I'll place the metal resonance layer as well but there are a number of possible candidates
+I think of trying to simulate whereas the vertical layout is pretty much fixed.
+
+Without _further' ado_ I'll place the two other layers below Z=0, turn on the orthographic side
+view to remove shadows and voila: ![verticaLayout](img/verticaLayout.bmp)
+I think it really gives a sense of scale as the air layer truly shadows the other two.

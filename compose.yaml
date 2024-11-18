@@ -1,3 +1,4 @@
+name: marksblog
 services:
     test:
         image: klakegg/hugo:ext-ubuntu-onbuild
@@ -6,7 +7,3 @@ services:
           - 1313:1313
         volumes: 
           - .:/src
-    compile:
-        image: klakegg/hugo:ext-ubuntu-onbuild
-        volumes:
-        - .:/src
