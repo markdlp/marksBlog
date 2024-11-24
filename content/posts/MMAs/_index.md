@@ -32,3 +32,10 @@ I think of trying to simulate whereas the vertical layout is pretty much fixed.
 Without _further' ado_ I'll place the two other layers below Z=0, turn on the orthographic side
 view to remove shadows and voila: ![verticaLayout](img/verticaLayout.bmp)
 I think it really gives a sense of scale as the air layer truly shadows the other two.
+
+Now its time to add the ring that is of the same material and thickness as the backplate and lies
+on top of the dielectric substrate. ![ring](img/ring.bmp)
+
+Now I'll try and perform a simulation using the frequency solver in CST just to get an idea 
+how the component behaves, the boundaries will be periodic along the XY plate and I will add
+absorbing conditions along the Z axis.
