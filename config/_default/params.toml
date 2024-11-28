@@ -24,6 +24,8 @@ defaultBackgroundImage = "img/placeholder-optimized.png" # used as default for b
 # smartTOC = true
 # smartTOCHideUnfocusedChildren = true
 
+math = true
+
 [header]
   layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
 
