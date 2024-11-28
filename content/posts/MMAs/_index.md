@@ -38,7 +38,7 @@ on top of the dielectric substrate. ![ring](img/ring.bmp)
 
 Then I will move the substrate, air and backplate layers all below Z=0 just ti make is easier
 with designing the arrows. For this I make the assumption that both the arrow body and point are
-$$\alpha$$=0.5mm of width. ![nonparallel](img/parallel.png)
+a=0.5mm of width. ![nonparallel](img/parallel.png)
 In order to accurately place all the curve points that define the arrow some basic calculations
 shall be made. The two points of the arrow base lie exactly on the arc of the ring and are 
 equidistant from curve y=x so the in order to find their cartesian coordinates the following
