@@ -53,20 +53,11 @@ eq2 = sqrt(x2^2 + x1^2) == 2.7;
 sol = solve([eq1, eq2], [x1 x2]);
 disp([sol.x1 sol.x2]);
 ```
-$$
-\left(\begin{array}{cc} 
-    \sigma_3 -\frac{2916\,\sigma_1 }{1433} & -\sigma_1 \newline
-    \sigma_4 -\frac{2916\,\sigma_2 }{1433} & -\sigma_2 \newline 
-    \frac{2916\,\sigma_1 }{1433}-\sigma_3  & \sigma_1 \newline 
-    \frac{2916\,\sigma_2 }{1433}-\sigma_4  & \sigma_2  
-\end{array}\right)\\ \mathrm{} \\ 
-$$
+
+{{< katex >}}
 
 $$
-\textrm{where}\\ \mathrm{}\\ \sigma_1 =\sqrt{\frac{729}{200}-\frac{7\,\sqrt{59}}{80}}\\ \mathrm{}\\ 
-\sigma_2 =\sqrt{\frac{7\,\sqrt{59}}{80}+\frac{729}{200}}\\ \mathrm{}\\ 
-\sigma_3 =\frac{400\,{{\left(\frac{729}{200}-\frac{7\,\sqrt{59}}{80}\right)}}^{3/2} }{1433}\\ \mathrm{}\\ 
-\sigma_4 =\frac{400\,{{\left(\frac{7\,\sqrt{59}}{80}+\frac{729}{200}\right)}}^{3/2} }{1433}
+    \displaystyle \begin{array}{l} \left(\begin{array}{cc} \sigma_3 -\frac{2916\,\sigma_1 }{1433} & -\sigma_1 \newline \sigma_4 -\frac{2916\,\sigma_2 }{1433} & -\sigma_2 \newline \frac{2916\,\sigma_1 }{1433}-\sigma_3  & \sigma_1 \newline \frac{2916\,\sigma_2 }{1433}-\sigma_4  & \sigma_2  \end{array}\right)\newline\newline \textrm{where}\newline \sigma_1 =\sqrt{\frac{729}{200}-\frac{7\,\sqrt{59}}{80}}\newline \sigma_2 =\sqrt{\frac{7\,\sqrt{59}}{80}+\frac{729}{200}}\newline \sigma_3 =\frac{400\,{{\left(\frac{729}{200}-\frac{7\,\sqrt{59}}{80}\right)}}^{3/2} }{1433}\newline \sigma_4 =\frac{400\,{{\left(\frac{7\,\sqrt{59}}{80}+\frac{729}{200}\right)}}^{3/2} }{1433}\end{array}
 $$
 
 Which results in two points/quadrant so picking out the two points of the 1st quadrant and 
