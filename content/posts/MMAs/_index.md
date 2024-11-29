@@ -3,7 +3,7 @@ title: "MMAs"
 date: 2024-11-15T14:03:39Z
 draft: false
 ---
-
+{{< katex >}}
 ### Parametric Study of a Microwave Absorber Based on Metamaterials.
 
 _this post is pushed directly without preview as my windows pc cant handle docker 
@@ -38,7 +38,7 @@ on top of the dielectric substrate. ![ring](img/ring.bmp)
 
 Then I will move the substrate, air and backplate layers all below Z=0 just ti make is easier
 with designing the arrows. For this I make the assumption that both the arrow body and point are
-a=0.5mm of width. ![nonparallel](img/parallel.png)
+\\(\alpha = 0.5mm\\) of width. ![nonparallel](img/parallel.png)
 In order to accurately place all the curve points that define the arrow some basic calculations
 shall be made. The two points of the arrow base lie exactly on the arc of the ring and are 
 equidistant from curve y=x so the in order to find their cartesian coordinates the following
@@ -53,9 +53,6 @@ eq2 = sqrt(x2^2 + x1^2) == 2.7;
 sol = solve([eq1, eq2], [x1 x2]);
 disp([sol.x1 sol.x2]);
 ```
-
-{{< katex >}}
-
 $$
     \displaystyle \begin{array}{l} \left(\begin{array}{cc} \sigma_3 -\frac{2916\,\sigma_1 }{1433} & -\sigma_1 \newline \sigma_4 -\frac{2916\,\sigma_2 }{1433} & -\sigma_2 \newline \frac{2916\,\sigma_1 }{1433}-\sigma_3  & \sigma_1 \newline \frac{2916\,\sigma_2 }{1433}-\sigma_4  & \sigma_2  \end{array}\right)\newline\newline \textrm{where}\newline \sigma_1 =\sqrt{\frac{729}{200}-\frac{7\,\sqrt{59}}{80}}\newline \sigma_2 =\sqrt{\frac{7\,\sqrt{59}}{80}+\frac{729}{200}}\newline \sigma_3 =\frac{400\,{{\left(\frac{729}{200}-\frac{7\,\sqrt{59}}{80}\right)}}^{3/2} }{1433}\newline \sigma_4 =\frac{400\,{{\left(\frac{7\,\sqrt{59}}{80}+\frac{729}{200}\right)}}^{3/2} }{1433}\end{array}
 $$
