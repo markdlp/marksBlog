@@ -4,6 +4,7 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - autorun
+  - dpkg
   - katex
   - lhci
   - metamaterials
