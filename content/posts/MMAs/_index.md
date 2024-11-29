@@ -6,8 +6,7 @@ draft: false
 {{< katex >}}
 ### Parametric Study of a Microwave Absorber Based on Metamaterials.
 
-_this post is pushed directly without preview as my windows pc cant handle docker 
-along w/ every other program I ran for this all at once_
+_this post is a work in progress_
 
 In the fall semester of academic year 2024-2025 I decided took upon a project in order to
 design a microwave absorber based on metamaterials. In this post I will document the

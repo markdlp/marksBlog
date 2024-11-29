@@ -3,6 +3,9 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - autorun
+  - katex
+  - lhci
   - metamaterials
   - souldn't
   - vertica
