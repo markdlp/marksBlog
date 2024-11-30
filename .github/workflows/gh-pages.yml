@@ -15,17 +15,17 @@ concurrency:
   group: "pages" # ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
-# Default to zsh
+# Default to bash
 defaults:
   run:
-    shell: zsh
+    shell: bash
 
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.120.2
+      HUGO_VERSION: 0.139.3
     steps:
       - name: Checkout
         uses: actions/checkout@v3
