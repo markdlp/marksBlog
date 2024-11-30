@@ -1,0 +1,40 @@
+{
+  "name": "myBlog",
+
+  "image": "mcr.microsoft.com/devcontainers/go",
+
+  "features": { 
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/hugo:1": {},
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+  },
+
+  "forwardPorts": [1313],
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {},
+      "extensions": [
+        "eliostruyf.vscode-front-matter",
+        "budparr.language-hugo-vscode",
+        "esbenp.prettier-vscode",
+        "tamasfe.even-better-toml",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-docker",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+
+  "remoteUser": "root",
+
+  "postCreateCommand": "gh auth login"
+}
