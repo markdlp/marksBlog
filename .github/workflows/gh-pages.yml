@@ -15,10 +15,10 @@ concurrency:
   group: "pages" # ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
-# Default to bash
+# Default to zsh
 defaults:
   run:
-    shell: bash
+    shell: zsh
 
 
 jobs:
