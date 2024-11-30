@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MMAs on markdlp</title>
-    <link>http://localhost:1313/posts/mmas/</link>
-    <description>Recent content in MMAs on markdlp</description>
+    <title>Cabride on markdlp</title>
+    <link>http://localhost:1313/posts/cabride/</link>
+    <description>Recent content in Cabride on markdlp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>markos.de.la.portas@gmail.com (Mark Delaportas)</managingEditor>
     <webMaster>markos.de.la.portas@gmail.com (Mark Delaportas)</webMaster>
     <copyright>© 2024 Mark Delaportas</copyright>
-    <lastBuildDate>Fri, 15 Nov 2024 14:03:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/mmas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 22:58:22 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/cabride/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
