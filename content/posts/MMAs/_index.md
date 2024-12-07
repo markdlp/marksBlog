@@ -72,3 +72,5 @@ how the component behaves, the boundaries will be periodic along the XY plate an
 absorbing conditions along the Z axis.
 
 For reference the mesh with only the ring element on the surface ends up such as: ![onlyRing](img/mesh.png)
+
+Adding the arrows and running the simulation outputs something like:
