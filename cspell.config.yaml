@@ -1,0 +1,14 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - autorun
+  - dpkg
+  - katex
+  - lhci
+  - metamaterials
+  - souldn't
+  - vertica
+ignoreWords: []
+import: []

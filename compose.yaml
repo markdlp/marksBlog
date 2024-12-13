@@ -1,9 +1,0 @@
-name: marksblog
-services:
-    test:
-        image: klakegg/hugo:ext-ubuntu-onbuild
-        command: server -D
-        ports: 
-          - 1313:1313
-        volumes: 
-          - .:/src
