@@ -53,8 +53,8 @@
       ]
     }
   },
-  "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:$HOME/.npm"
-  },
+  //"remoteUser": "mark",
+  //"containerUser": "mark",
+  "remoteEnv": { "PATH": "${containerEnv:PATH}:$HOME/.npm"},
   "postCreateCommand": "gh auth login"
 }
