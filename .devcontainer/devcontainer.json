@@ -42,6 +42,7 @@
       "extensions": [
         "budparr.language-hugo-vscode",
         "esbenp.prettier-vscode",
+        "firefox-devtools.vscode-firefox-debug",
         "tamasfe.even-better-toml",
         "GitHub.vscode-pull-request-github",
         "eamodio.gitlens",
