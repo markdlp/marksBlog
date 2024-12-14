@@ -26,20 +26,20 @@ for this I'll implement a three-layer structure:
 - An Air Layer
 - A Metal Copper Back-Plate
 
-At first I'll place the substrate without the resonance layer: ![Substrate](img/substrate.bmp)
+At first I'll place the substrate without the resonance layer: ![Substrate](./substrate.bmp)
 Later I'll place the metal resonance layer as well but there are a number of possible candidates
 I think of trying to simulate whereas the vertical layout is pretty much fixed.
 
 Without _further' ado_ I'll place the two other layers below Z=0, turn on the orthographic side
-view to remove shadows and voila: ![verticaLayout](img/verticaLayout.bmp)
+view to remove shadows and voila: ![verticaLayout](./verticaLayout.bmp)
 I think it really gives a sense of scale as the air layer truly shadows the other two.
 
 Now its time to add the ring that is of the same material and thickness as the backplate and lies
-on top of the dielectric substrate. ![ring](img/ring.bmp)
+on top of the dielectric substrate. ![ring](./ring.bmp)
 
 Then I will move the substrate, air and backplate layers all below Z=0 just ti make is easier
 with designing the arrows. For this I make the assumption that both the arrow body and point are
-\\(\alpha = 0.5mm\\) of width. ![nonparallel](img/parallel.png)
+\\(\alpha = 0.5mm\\) of width. ![nonparallel](./parallel.png)
 In order to accurately place all the curve points that define the arrow some basic calculations
 shall be made. The two points of the arrow base lie exactly on the arc of the ring and are
 equidistant from curve y=x so the in order to find their cartesian coordinates the following
@@ -60,17 +60,17 @@ $$
 $$
 
 Which results in two points/quadrant so picking out the two points of the 1st quadrant and
-inserting them to CST the arrow body is parallel again ![corrected](img/corretArrowBase.png)
+inserting them to CST the arrow body is parallel again ![corrected](./corretArrowBase.png)
 
 Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
-attributed, which is why it was important to move all other layers below Z=0. ![mirrored](img/mirroredArrows.png)
-![rna](img/RingAndArrows.png)
+attributed, which is why it was important to move all other layers below Z=0. ![mirrored](./mirroredArrows.png)
+![rna](./RingAndArrows.png)
 
 Now I'll try and perform a simulation using the frequency solver in CST just to get an idea
 how the component behaves, the boundaries will be periodic along the XY plate and I will add
 absorbing conditions along the Z axis.
 
-For reference the mesh with only the ring element on the surface ends up such as: ![onlyRing](img/mesh.png)
+For reference the mesh with only the ring element on the surface ends up such as: ![onlyRing](./mesh.png)
 
 Adding the arrows and running the simulation outputs something like: ![panda](./UnitCell_E_27e2MHz_Zmax1.gif)
