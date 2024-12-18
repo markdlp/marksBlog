@@ -10,7 +10,7 @@
     }
   },
   "forwardPorts": [
-    1313
+    1313, 9222
   ],
 
   "customizations": {
