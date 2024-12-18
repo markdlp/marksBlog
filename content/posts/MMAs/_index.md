@@ -71,6 +71,7 @@ Now I'll try and perform a simulation using the frequency solver in CST just to 
 how the component behaves, the boundaries will be periodic along the XY plate and I will add
 absorbing conditions along the Z axis.
 
-For reference the mesh with only the ring element on the surface ends up such as: ![onlyRing](./mesh.png)
+The mesh of after of the structure after the simulation is as: ![onlyRing](./mesh.png)
 
-Adding the arrows and running the simulation outputs something like: ![panda](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)
+For the Electrical Field Simulation > and for the frequency 2.7GHz and for \\(Z_{max}(1)\\) is as:
+![panda](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)
