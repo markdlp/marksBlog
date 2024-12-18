@@ -73,8 +73,4 @@ absorbing conditions along the Z axis.
 
 For reference the mesh with only the ring element on the surface ends up such as: ![onlyRing](./mesh.png)
 
-<<<<<<< HEAD
-Adding the arrows and running the simulation mesh output looks something like: ![panda](img/MMA_UnitCell_noResistors_01.gif)
-=======
-Adding the arrows and running the simulation outputs something like: ![panda](./UnitCell_E_27e2MHz_Zmax1.gif)
->>>>>>> b81819020387f9266107b3905f0f61a402c50774
+Adding the arrows and running the simulation outputs something like: ![panda](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)

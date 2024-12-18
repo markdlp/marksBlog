@@ -1,0 +1,6 @@
+*.png binary
+*.jpg binary
+*.bmp binary
+*.json text=auto
+*.md text=auto
+*.html text=auto
