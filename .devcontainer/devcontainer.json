@@ -43,6 +43,7 @@
         "budparr.language-hugo-vscode",
         "esbenp.prettier-vscode",
         "firefox-devtools.vscode-firefox-debug",
+        "ms-edgedevtools.vscode-edge-devtools",
         "tamasfe.even-better-toml",
         "GitHub.vscode-pull-request-github",
         "eamodio.gitlens",
@@ -60,5 +61,5 @@
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
     "PATH": "${containerEnv:PATH}"
   },
-  "postCreateCommand": "gh auth login && zsh -i -c 'nvm install --lts'"
+  "postCreateCommand": "gh auth login && zsh -i -c 'nvm install --lts' && npx blowfish-tools"
 }
