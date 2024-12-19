@@ -13,7 +13,7 @@ In the fall semester of academic year 2024-2025 I decided took upon a project in
 design a microwave absorber based on metamaterials. In this post I document the
 progress as per the development of the cell and the modeling in order to lay everything
 publicly available and understand better as I try explaining the process
-to this figurative rubber ducky :duck: that _is_ my editor. Finally I have opened a 
+to this figurative rubber :duck: that _is_ my editor. Finally I have opened a 
 GitHub repository for the report that will eventually be submitted to my university and 
 based upon I'll be _eventually_ credited; it can be found [here](https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials).
 
@@ -59,8 +59,8 @@ inserting them to CST the arrow body is parallel again ![corrected](./corretArro
 
 Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
-attributed, which is why it was important to move all other layers below Z=0. ![mirrored](./mirroredArrows.png)
-![rna](./RingAndArrows.png)
+attributed, which is why it was important to move all other layers below Z=0. 
+![mirrored](./mirroredArrows.png) | ![rna](./RingAndArrows.png)
 
 Now I'll try and perform a simulation using the frequency solver in CST from 2.7 to 12.7 GHz,
 adding a port with space (\\(Z_{max}\\)) in front of the cell and setting the orientation to 
