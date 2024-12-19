@@ -51,7 +51,8 @@
         "streetsidesoftware.code-spell-checker",
         "johnpapa.vscode-peacock",
         "ms-azuretools.vscode-docker",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "bierner.emojisense"
       ]
     }
   },
