@@ -4,7 +4,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "name": "Launch localhost",
+            "name": "Launch Firefox",
             "url": "http://localhost:1313/",
             "webRoot": "${workspaceFolder}",
             "pathMappings": [
@@ -21,11 +21,13 @@
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
             ],
-            "url": "c:\\Users\\marko\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "url": "http://localhost:1313",
             "presentation": {
                 "hidden": true
             },
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/public",
+            "preLaunchTask": "start server",
+            //"postDebugTask": "stop server",
         },
         {
             "type": "msedge",
@@ -35,20 +37,23 @@
                 "--headless",
                 "--remote-debugging-port=9222"
             ],
-            "url": "c:\\Users\\marko\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "url": "http://localhost:1313",
             "presentation": {
                 "hidden": true
             },
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/public",
+            "preLaunchTask": "start server",
+            //"postDebugTask": "stop server",
         },
         {
             "type": "vscode-edge-devtools.debug",
             "name": "Open Edge DevTools",
             "request": "attach",
-            "url": "c:\\Users\\marko\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.6\\out\\startpage\\index.html",
+            "url": "http://localhost:1313",
             "presentation": {
                 "hidden": true
-            }
+            },
+            "webRoot": "${workspaceFolder}"
         }
     ],
     "compounds": [

@@ -59,8 +59,11 @@ inserting them to CST the arrow body is parallel again ![corrected](./corretArro
 
 Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
-attributed, which is why it was important to move all other layers below Z=0. 
-![mirrored](./mirroredArrows.png) | ![rna](./RingAndArrows.png)
+attributed, which is why it was important to move all other layers below Z=0.
+
+|
+:-------------------------:|:-------------------------:
+| ![mirrored](./mirroredArrows.png) | ![rna](./RingAndArrows.png) |
 
 Now I'll try and perform a simulation using the frequency solver in CST from 2.7 to 12.7 GHz,
 adding a port with space (\\(Z_{max}\\)) in front of the cell and setting the orientation to 
@@ -69,5 +72,7 @@ will be periodic along the XY plate and I will add an absorbing condition (\\(Z_
 
 The mesh of after of the structure after the simulation is as: ![mesh](./mesh.png)
 
-For the Electrical Field Simulation > and for the frequency 2.7GHz and for \\(Z_{max}(1)\\) is as:
-![panda](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)
+For the Electrical Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz and for \\(Z_{max}(1)\\) is as:
+||
+:-------------------------:|:-------------------------:|:-------------------------:
+|![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
