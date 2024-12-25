@@ -1,5 +1,5 @@
 ---
-title: "lacan"
+title: "Understanding Object Petit A"
 date: 2024-12-25
 draft: true
 description: "a description"
