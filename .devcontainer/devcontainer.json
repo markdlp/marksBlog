@@ -2,22 +2,24 @@
   "name": "myBlog",
   "image": "mcr.microsoft.com/devcontainers/go",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "extended": true
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/hugo:1": {},
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }
   },
   "forwardPorts": [
-    1313
+    1313, 9222
   ],
-  // Configure tool-specific properties.
+
   "customizations": {
-    // Configure properties specific to VS Code.
     "vscode": {
-      // Set *default* container specific settings.json values on container create.
       
       "settings": {
-        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+        //"terminal.integrated.shell.linux": "/usr/bin/zsh",
         "peacock.color": "#832561",
         "workbench.colorCustomizations": {
           "activityBar.activeBackground": "#ab307e",
@@ -43,6 +45,7 @@
         "budparr.language-hugo-vscode",
         "esbenp.prettier-vscode",
         "firefox-devtools.vscode-firefox-debug",
+        "ms-edgedevtools.vscode-edge-devtools",
         "tamasfe.even-better-toml",
         "GitHub.vscode-pull-request-github",
         "eamodio.gitlens",
@@ -50,12 +53,16 @@
         "streetsidesoftware.code-spell-checker",
         "johnpapa.vscode-peacock",
         "ms-azuretools.vscode-docker",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "bierner.emojisense"
       ]
     }
   },
-  //"remoteUser": "mark",
-  //"containerUser": "mark",
-  "remoteEnv": { "PATH": "${containerEnv:PATH}:$HOME/.npm"},
-  "postCreateCommand": "gh auth login"
+  //"remoteUser": "",
+  "containerUser": "vscode",
+  "remoteEnv": { 
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "PATH": "${containerEnv:PATH}"
+  },
+  "postCreateCommand": "gh auth login && zsh -i -c 'nvm install --lts' && npx blowfish-tools"
 }

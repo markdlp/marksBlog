@@ -4,11 +4,24 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - autorun
+  - bierner
+  - budparr
+  - devcontainers
+  - disp
   - dpkg
+  - eamodio
+  - edgedevtools
+  - emojisense
+  - esbenp
+  - johnpapa
   - katex
   - lhci
   - metamaterials
   - souldn't
+  - syms
+  - tamasfe
+  - textrm
   - vertica
+  - yzhang
 ignoreWords: []
 import: []

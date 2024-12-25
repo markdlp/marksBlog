@@ -555,94 +555,46 @@
     
 </h4>
 <p>In the fall semester of academic year 2024-2025 I decided took upon a project in order to
-design a microwave absorber based on metamaterials. In this post I will document the
-progress as I learn and develop the cell and the modeling in order to lay everything
-publicly available and also to short of understand better as I try and explain the process
-to this figurative rubber ducky that <em>is</em> my editor, not the one it <em>has</em> because vs code
-pets is not very feature rich at the moment. Finally I have opened a GitHub repository
-for the report that I&rsquo;ll eventually submit to my university and for based upon I&rsquo;ll be
-credited, it can be found <a href="https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials" target="_blank">here</a>.</p>
-<p>So at first I start by designing a basic layout in CST..</p>
-<p>for this I&rsquo;ll implement a three-layer structure:</p>
+design a microwave absorber based on metamaterials. In this post I document the
+progress as per the development of the cell and the modeling in order to lay everything
+publicly available and understand better as I try explaining the process
+to this figurative rubber &#x1f986; that <em>is</em> my editor. Finally I have opened a
+GitHub repository for the report that will eventually be submitted to my university and
+based upon I&rsquo;ll be <em>eventually</em> credited; it can be found <a href="https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials" target="_blank">here</a>.</p>
+<p>So to start by designing a basic layout in CST I&rsquo;ll implement a three-layer structure:</p>
 <ul>
-<li>A dielectric Substrate w/ a metal Resonance Layer</li>
+<li>A dielectric Substrate w/ a metal Resonance Layer*</li>
 <li>An Air Layer</li>
 <li>A Metal Copper Back-Plate</li>
 </ul>
-<p>At first I&rsquo;ll place the substrate without the resonance layer: 
+<p>*The metal resonance layer is technically an extra layer on top of the substrate and as a
+matter of fact it&rsquo;s the only layer above Z=0 for reasons that&rsquo;ll become obvious later on.</p>
+<p>At first placing the substrate without the resonance layer, then I&rsquo;ll place the two other
+layers, turn on the orthographic side view to remove shadows and voila:
+
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/substrate_hu18442868287700864391.bmp 330w,
-        /img/substrate_hu11217334527716438528.bmp 660w,
-        /img/substrate_hu5407345050010800719.bmp 1024w,
-        /img/substrate_hu10713040185621226230.bmp 2x"
-        src="/img/substrate_hu11217334527716438528.bmp"
-        alt="Substrate"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./verticaLayout.bmp" alt="verticaLayout" />
       
     </figure>
 
-Later I&rsquo;ll place the metal resonance layer as well but there are a number of possible candidates
-I think of trying to simulate whereas the vertical layout is pretty much fixed.</p>
-<p>Without <em>further&rsquo; ado</em> I&rsquo;ll place the two other layers below Z=0, turn on the orthographic side
-view to remove shadows and voila: 
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/verticaLayout_hu17444719045100834034.bmp 330w,
-        /img/verticaLayout_hu6000837079044255391.bmp 660w,
-        /img/verticaLayout_hu2957778947878561907.bmp 1024w,
-        /img/verticaLayout_hu979292433013569203.bmp 2x"
-        src="/img/verticaLayout_hu6000837079044255391.bmp"
-        alt="verticaLayout"
-      />
-      
-    </figure>
-
-I think it really gives a sense of scale as the air layer truly shadows the other two.</p>
+I think it really gives a sense of scale as the air layer truly dwarfs the others.</p>
 <p>Now its time to add the ring that is of the same material and thickness as the backplate and lies
 on top of the dielectric substrate. 
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/ring_hu216817671663296563.bmp 330w,
-        /img/ring_hu11656417394376380414.bmp 660w,
-        /img/ring_hu12569261092461304868.bmp 1024w,
-        /img/ring_hu7271321325565709438.bmp 2x"
-        src="/img/ring_hu11656417394376380414.bmp"
-        alt="ring"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./ring.bmp" alt="ring" />
       
     </figure>
 </p>
-<p>Then I will move the substrate, air and backplate layers all below Z=0 just ti make is easier
-with designing the arrows. For this I make the assumption that both the arrow body and point are
+<p>For the arrows I make the assumption that both the arrow body and point are
 \(\alpha = 0.5mm\) of width. 
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/parallel_hu8971957134052069245.png 330w,
-        /img/parallel_hu15227971895423968964.png 660w,
-        /img/parallel_hu11531056128589387579.png 1024w,
-        /img/parallel_hu3002488718345335167.png 2x"
-        src="/img/parallel_hu15227971895423968964.png"
-        alt="nonparallel"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./parallel.png" alt="nonparallel" />
       
     </figure>
 
 In order to accurately place all the curve points that define the arrow some basic calculations
-shall be made. The two points of the arrow base lie exactly on the arc of the ring and are
-equidistant from curve y=x so the in order to find their cartesian coordinates the following
+shall be made. The two points of the arrow base lay exactly on the arc of the ring (w/ r=2.7mm)
+and are equidistant from curve y=x so the in order to find their cartesian coordinates the following
 system shall be solved.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">syms</span> <span class="n">x1</span> <span class="n">x2</span>
 </span></span><span class="line"><span class="cl">
@@ -654,82 +606,82 @@ system shall be solved.</p>
 </span></span></code></pre></div><p>$$
 \displaystyle \begin{array}{l} \left(\begin{array}{cc} \sigma_3 -\frac{2916,\sigma_1 }{1433} &amp; -\sigma_1 \newline \sigma_4 -\frac{2916,\sigma_2 }{1433} &amp; -\sigma_2 \newline \frac{2916,\sigma_1 }{1433}-\sigma_3  &amp; \sigma_1 \newline \frac{2916,\sigma_2 }{1433}-\sigma_4  &amp; \sigma_2  \end{array}\right)\newline\newline \textrm{where}\newline \sigma_1 =\sqrt{\frac{729}{200}-\frac{7,\sqrt{59}}{80}}\newline \sigma_2 =\sqrt{\frac{7,\sqrt{59}}{80}+\frac{729}{200}}\newline \sigma_3 =\frac{400,{{\left(\frac{729}{200}-\frac{7,\sqrt{59}}{80}\right)}}^{3/2} }{1433}\newline \sigma_4 =\frac{400,{{\left(\frac{7,\sqrt{59}}{80}+\frac{729}{200}\right)}}^{3/2} }{1433}\end{array}
 $$</p>
-<p>Which results in two points/quadrant so picking out the two points of the 1st quadrant and
+<p>Which results in two points per quadrant, picking out the two points of the 1st quadrant and
 inserting them to CST the arrow body is parallel again 
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/corretArrowBase_hu7479383311875984674.png 330w,
-        /img/corretArrowBase_hu15877110722483822483.png 660w,
-        /img/corretArrowBase_hu14724749847662966044.png 1024w,
-        /img/corretArrowBase_hu738687063664218640.png 2x"
-        src="/img/corretArrowBase_hu15877110722483822483.png"
-        alt="corrected"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./corretArrowBase.png" alt="corrected" />
       
     </figure>
 </p>
 <p>Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
-attributed, which is why it was important to move all other layers below Z=0. 
+attributed, which is why it was important to move all other layers below Z=0.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/mirroredArrows_hu10758359463766756690.png 330w,
-        /img/mirroredArrows_hu1909564240433509484.png 660w,
-        /img/mirroredArrows_hu1714510141530817139.png 1024w,
-        /img/mirroredArrows_hu14530626319326304251.png 2x"
-        src="/img/mirroredArrows_hu1909564240433509484.png"
-        alt="mirrored"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./mirroredArrows.png" alt="mirrored" />
       
     </figure>
-
-
+</td>
+          <td style="text-align: center">
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/RingAndArrows_hu15001361394227660321.png 330w,
-        /img/RingAndArrows_hu14697718748176495339.png 660w,
-        /img/RingAndArrows_hu6892010459903894309.png 1024w,
-        /img/RingAndArrows_hu1686997742458895736.png 2x"
-        src="/img/RingAndArrows_hu14697718748176495339.png"
-        alt="rna"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./RingAndArrows.png" alt="rna" />
       
     </figure>
-</p>
-<p>Now I&rsquo;ll try and perform a simulation using the frequency solver in CST just to get an idea
-how the component behaves, the boundaries will be periodic along the XY plate and I will add
-absorbing conditions along the Z axis.</p>
-<p>For reference the mesh with only the ring element on the surface ends up such as: 
+</td>
+      </tr>
+  </tbody>
+</table>
+<p>Now I&rsquo;ll try and perform a simulation using the frequency solver in CST from 2.7 to 12.7 GHz,
+adding a port with space (\(Z_{max}\)) in front of the cell and setting the orientation to
+negative so that is faces the absorber and the coordinates as full-plane the boundaries
+will be periodic along the XY plate and I will add an absorbing condition (\(Z_{min}\)).</p>
+<p>The mesh of after of the structure after the simulation is as: 
     <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /img/mesh_hu17537972005702603468.png 330w,
-        /img/mesh_hu10698237440036260462.png 660w,
-        /img/mesh_hu16945353822138668859.png 1024w,
-        /img/mesh_hu1303269888237817625.png 2x"
-        src="/img/mesh_hu10698237440036260462.png"
-        alt="onlyRing"
-      />
+      <img class="my-0 rounded-md" loading="lazy" src="./mesh.png" alt="mesh" />
       
     </figure>
 </p>
-<p>Adding the arrows and running the simulation outputs something like: 
+<p>For the Electrical Field Simulation &gt; and for the frequency [2.7, 7.7, 12.7] GHz and for \(Z_{max}(1)\) is as:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">
     <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="./UnitCell_E_27e2MHz_Zmax1.gif" alt="panda" />
+      <img class="my-0 rounded-md" loading="lazy" src="./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif" alt="UnitCell_E_Zmax1_2.7GHz" />
       
     </figure>
-</p>
+</td>
+          <td style="text-align: center">
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif" alt="UnitCell_E_Zmax1_7.7GHz" />
+      
+    </figure>
+</td>
+          <td style="text-align: center">
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif" alt="UnitCell_E_Zmax1_12.7GHz" />
+      
+    </figure>
+</td>
+      </tr>
+  </tbody>
+</table>
 
     </div>
 
