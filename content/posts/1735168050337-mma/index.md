@@ -27,14 +27,14 @@ matter of fact it's the only layer above Z=0 for reasons that'll become obvious 
 
 At first placing the substrate without the resonance layer, then I'll place the two other
 layers, turn on the orthographic side view to remove shadows and voila: 
-![verticaLayout](../MMAs/verticaLayout.bmp)
+![verticaLayout](./verticaLayout.bmp)
 I think it really gives a sense of scale as the air layer truly dwarfs the others.
 
 Now its time to add the ring that is of the same material and thickness as the backplate and lies
-on top of the dielectric substrate. ![ring](../MMAs/ring.bmp)
+on top of the dielectric substrate. ![ring](./ring.bmp)
 
 For the arrows I make the assumption that both the arrow body and point are
-\\(\alpha = 0.5mm\\) of width. ![nonparallel](../MMAs/parallel.png)
+\\(\alpha = 0.5mm\\) of width. ![nonparallel](./parallel.png)
 In order to accurately place all the curve points that define the arrow some basic calculations
 shall be made. The two points of the arrow base lay exactly on the arc of the ring (w/ r=2.7mm)
 and are equidistant from curve y=x so the in order to find their cartesian coordinates the following
@@ -55,7 +55,7 @@ $$
 $$
 
 Which results in two points per quadrant, picking out the two points of the 1st quadrant and
-inserting them to CST the arrow body is parallel again ![corrected](../MMAs/corretArrowBase.png)
+inserting them to CST the arrow body is parallel again ![corrected](./corretArrowBase.png)
 
 Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
@@ -63,16 +63,22 @@ attributed, which is why it was important to move all other layers below Z=0.
 
 |
 :-------------------------:|:-------------------------:
-| ![mirrored](../MMAs/mirroredArrows.png) | ![rna](../MMAs/RingAndArrows.png) |
+| ![mirrored](./mirroredArrows.png) | ![rna](./RingAndArrows.png) |
 
 Now I'll try and perform a simulation using the frequency solver in CST from 2.7 to 12.7 GHz,
 adding a port with space (\\(Z_{max}\\)) in front of the cell and setting the orientation to 
 negative so that is faces the absorber and the coordinates as full-plane the boundaries 
 will be periodic along the XY plate and I will add an absorbing condition (\\(Z_{min}\\)).
 
-The mesh of after of the structure after the simulation is as: ![mesh](../MMAs/mesh.png)
+The mesh of after of the structure after the simulation is as: ![mesh](./feature_mesh.png)
 
 For the Electrical Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz and for \\(Z_{max}(1)\\) is as:
 ||
 :-------------------------:|:-------------------------:|:-------------------------:
-|![UnitCell_E_Zmax1_2.7GHz](../MMAs/UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](../MMAs/UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](../MMAs/UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
+|![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
+
+
+For the Magnetic Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz and for \\(Z_{max}(1)\\) is as:
+||
+:-------------------------:|:-------------------------:|:-------------------------:
+|![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
