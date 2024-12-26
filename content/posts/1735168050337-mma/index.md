@@ -3,7 +3,7 @@ title: "Parametric Study of a Microwave Absorber Based on Metamaterials"
 date: 2024-12-25
 draft: false
 description: "a description"
-tags: ["example", "tag"]
+tags: ["em", "university"]
 ---
 {{< katex >}}
 

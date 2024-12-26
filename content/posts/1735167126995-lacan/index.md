@@ -3,13 +3,9 @@ title: "Understanding Object Petit A"
 date: 2024-12-25
 draft: true
 description: "a description"
-tags: ["example", "tag"]
+tags: ["philosophy", "psychology"]
 ---
- an example to get you started
-# This is a heading
-## This is a subheading
-### This is a subsubheading
-#### This is a subsubsubheading
-This is a paragraph with **bold** and *italic* text.
-Check more at [Blowfish documentation](https://blowfish.page/)
-undefined
+In this post I'm am attempting to understand Jacques Lacan, an endeavour
+most likely doomed to fail as I ought to understand an enormous amount of
+material and philosophy that precedes 'objet petit a'.
+
