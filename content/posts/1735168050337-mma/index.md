@@ -78,7 +78,7 @@ For the Electrical Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz
 |![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
 
 
-For the Magnetic Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz and for \\(Z_{max}(1)\\) is as:
+For the Electric Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz and for \\(Z_{max}(2)\\) is as:
 ||
 :-------------------------:|:-------------------------:|:-------------------------:
-|![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax1_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax1_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax1_127e2MHz.gif)|
+|![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax2_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax2_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax2_127e2MHz.gif)|
