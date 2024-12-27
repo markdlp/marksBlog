@@ -4,7 +4,9 @@ date: 2024-12-25
 draft: true
 description: "a description"
 tags: ["philosophy", "psychology"]
+showComments: true
 ---
+
 In this post I'm am attempting to understand Jacques Lacan, an endeavour
 most likely doomed to fail as I ought to understand an enormous amount of
 material and philosophy that precedes 'objet petit a'.
