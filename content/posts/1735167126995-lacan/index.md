@@ -1,7 +1,7 @@
 ---
 title: "Understanding Object Petit α"
 date: 2024-12-25
-draft: false
+draft: true
 description: "a description"
 tags: ["philosophy", "psychology"]
 showComments: true
