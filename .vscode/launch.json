@@ -12,7 +12,8 @@
                     "url": "http://localhost:1313",
                     "path": "${workspaceFolder}"
                 }
-            ]
+            ],
+            "linux": {"firefoxExecutable": "/usr/bin/firefox-devedition"}
         },
         {
             "type": "msedge",

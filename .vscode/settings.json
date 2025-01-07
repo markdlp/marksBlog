@@ -2,6 +2,8 @@
     "peacock.color": "#832561",
     "vscode-edge-devtools.browserFlavor": "Stable",
     "vscode-edge-devtools.webRoot": "${workspaceFolder}/public",
+    "workbench.externalBrowser": "/usr/bin/firefox-devedition"
+    "vscode-edge-devtools.webRoot": "${workspaceFolder}/public",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#ab307e",
         "activityBar.background": "#ab307e",

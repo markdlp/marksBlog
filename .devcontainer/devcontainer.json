@@ -2,11 +2,20 @@
   "name": "myBlog",
   "image": "mcr.microsoft.com/devcontainers/go",
   "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
+    },
     "ghcr.io/devcontainers/features/hugo:1": {
       "extended": true
     },
-    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "latest"
     }
@@ -18,29 +27,7 @@
   "customizations": {
     "vscode": {
       
-      "settings": {
-        //"terminal.integrated.shell.linux": "/usr/bin/zsh",
-        "peacock.color": "#832561",
-        "workbench.colorCustomizations": {
-          "activityBar.activeBackground": "#ab307e",
-          "activityBar.background": "#ab307e",
-          "activityBar.foreground": "#e7e7e7",
-          "activityBar.inactiveForeground": "#e7e7e799",
-          "activityBarBadge.background": "#25320e",
-          "activityBarBadge.foreground": "#e7e7e7",
-          "commandCenter.border": "#e7e7e799",
-          "sash.hoverBorder": "#ab307e",
-          "statusBar.background": "#832561",
-          "statusBar.foreground": "#e7e7e7",
-          "statusBarItem.hoverBackground": "#ab307e",
-          "statusBarItem.remoteBackground": "#832561",
-          "statusBarItem.remoteForeground": "#e7e7e7",
-          "titleBar.activeBackground": "#832561",
-          "titleBar.activeForeground": "#e7e7e7",
-          "titleBar.inactiveBackground": "#83256199",
-          "titleBar.inactiveForeground": "#e7e7e799"
-        }
-      },
+      // "settings": { "terminal.integrated.shell.linux": "/usr/bin/zsh"},
       "extensions": [
         "budparr.language-hugo-vscode",
         "esbenp.prettier-vscode",
@@ -54,7 +41,8 @@
         "johnpapa.vscode-peacock",
         "ms-azuretools.vscode-docker",
         "github.vscode-github-actions",
-        "bierner.emojisense"
+        "bierner.emojisense",
+        "hediet.vscode-drawio"
       ]
     }
   },

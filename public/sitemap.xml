@@ -3,50 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/posts/accept/</loc>
-    <lastmod>2024-11-24T00:43:15+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735168514623-anxp/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/mmas/</loc>
-    <lastmod>2024-11-15T14:03:39+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735168050337-mma/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/piraeusharbour/</loc>
-    <lastmod>2024-05-03T18:25:01+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735168562006-atharbour/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/healthy/</loc>
-    <lastmod>2024-03-03T11:56:42+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735168484784-2accept/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/kalman/</loc>
-    <lastmod>2023-12-12T16:27:29+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735167126995-lacan/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/cabride/</loc>
-    <lastmod>2023-11-21T22:58:22+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/cardep/</loc>
-    <lastmod>2023-11-21T22:07:19+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/knowledge/</loc>
-    <lastmod>2023-11-21T22:07:19+00:00</lastmod>
+    <loc>http://localhost:1313/posts/1735168453361-cardep/</loc>
+    <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -59,17 +47,6 @@
   <url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2023-11-20T00:13:54+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/docs/</loc>
-    <lastmod>2023-10-29T21:46:46+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/kalman/matlab/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
