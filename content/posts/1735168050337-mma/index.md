@@ -59,7 +59,7 @@ inserting them to CST the arrow body is parallel again ![corrected](./corretArro
 
 Then the arrow is mirrored against the X, the Y and the XY planes in order to reach all four
 sides of the cell, then the face is covered with copper and a height of d=0.035mm is also
-attributed, which is why it was important to move all other layers below Z=0.
+attributed, which is why it was important to place all other layers below Z=0.
 
 |
 :-------------------------:|:-------------------------:
