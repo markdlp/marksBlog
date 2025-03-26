@@ -82,3 +82,15 @@ For the Electric Field Simulation > and for the frequency [2.7, 7.7, 12.7] GHz a
 ||
 :-------------------------:|:-------------------------:|:-------------------------:
 |![UnitCell_E_Zmax1_2.7GHz](./UnitCell/UnitCell_E_Zmax2_027e2MHz.gif)|![UnitCell_E_Zmax1_7.7GHz](./UnitCell/UnitCell_E_Zmax2_077e2MHz.gif)|![UnitCell_E_Zmax1_12.7GHz](./UnitCell/UnitCell_E_Zmax2_127e2MHz.gif)|
+
+Taking a look in the \\(S_{11}\\) of \\(Z_{max}\\) that represents the reflection
+coefficient as well as the \\(S_{21}\\) that represents the port coupling, after the
+simulation as... The Absorptivity (against the frequency)
+is an essential metric and CST calculates it as shown in ....
+For the evaluation of the absorber Absorptivity can be calculated using the
+Fresnel equation: \\( A = 1 - R - T \\), where T is the transmission coefficient 
+... and can be calculated using the Fresnel equation: \\(T = \frac{2Z_0}
+{Z+Z_0}\\) and R is the reflection coefficient (\\(\Gamma\\)) and can be calculated 
+from the formula: \\(R = \frac{Z - Z_0}{Z + Z_0}\\). However the Z mentioned needs
+to be the normalized impedance of the absorber so this is where the calculation 
+will start.
