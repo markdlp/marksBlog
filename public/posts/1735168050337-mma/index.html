@@ -108,7 +108,7 @@
     "keywords": ["em","university"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "696"
+    "wordCount": "1224"
   }]
   </script>
 
@@ -594,10 +594,16 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-12-25T00:00:00&#43;00:00">2024 December 25</time><span class="px-2 text-primary-500">&middot;</span><span>696 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+  <time datetime="2024-12-25T00:00:00&#43;00:00">2024 December 25</time><span class="px-2 text-primary-500">&middot;</span><span>1224 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
   
 
   
+  
+  <span class="pl-2"><span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Draft
+  </span>
+</span></span>
   
 </div>
 
@@ -779,7 +785,83 @@
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
-    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#theoretical-study">Theoretical Study</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#theoretical-study">Theoretical Study</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
@@ -797,12 +879,106 @@ publicly available and understand better as I try explaining the process
 to this figurative rubber &#x1f986; that <em>is</em> my editor. Finally I have opened a
 GitHub repository for the report that will eventually be submitted to my university and
 based upon I&rsquo;ll be <em>eventually</em> credited; it can be found <a href="https://github.com/markdlp/ParametricStudy_MicrowaveAbsorberBasedOnMetamaterials" target="_blank">here</a>.</p>
-<p>So to start by designing a basic layout in CST I&rsquo;ll implement a three-layer structure:</p>
+
+
+<h3 class="relative group">Abstract 
+    <div id="abstract" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#abstract" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Microwave absorbers play a crucial role in modern
+telecommunications and electronic systems by mitigating unwanted electromagnetic
+interference (EMI) and enhancing the performance of various devices. These absorbers are
+essential in applications ranging from radar systems and anechoic chambers to consumer
+electronics and medical devices. Traditional microwave absorbers, while effective, often
+suffer from limitations such as bulkiness and narrow bandwidth. Metamaterial-based
+microwave absorbers offer a promising alternative due to their unique electromagnetic
+properties, which are not found in natural materials. These engineered materials can
+achieve near-unity absorption across a wide range of frequencies, making them highly
+efficient. The advantages of metamaterial absorbers include their thin profile,
+lightweight nature, and the ability to tailor their absorption characteristics through
+precise structural design. This makes them ideal for applications requiring compact and
+efficient EMI mitigation. Additionally, metamaterial absorbers can be designed to operate
+over multiple frequency bands, providing versatility and enhanced performance in complex
+electromagnetic environments.</p>
+
+
+<h3 class="relative group">Introduction 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Metamaterials are artificially designed materials that
+exhibit peculiar properties like negative refractive index,
+Snell&rsquo;s law reversal, Doppler effect reverse, and left-handed behavior.
+These properties make them suitable for various applications, including perfect absorption.
+Metamaterial absorbers can achieve near-unity absorption, thin profiles, lightweight
+characteristics, and design flexibility.</p>
+<p>The development of metamaterial absorbers has seen significant progress, with
+researchers exploring various designs and materials to enhance their performance.
+Metamaterial absorbers are predominantly used in the microwave, terahertz, and optical
+frequency spectra. Recent advancements include the development of multi-band
+polarization-insensitive metamaterial absorbers for microwave applications, broadband
+microwave coding metamaterial absorbers, and ultra-wideband
+origami microwave absorbers.</p>
+<p>This study begins with a theoretical exploration of absorber devices and the unique
+properties of metamaterials that make them suitable for electromagnetic wave absorption.
+Following this, the report details the implementation of a specific microwave absorber
+device using advanced simulation software, highlighting the practical aspects of device
+design and performance evaluation. Finally, the report addresses the parametric design and
+optimization of the device, fine-tuning structural parameters to achieve optimal absorption
+characteristics. Through this comprehensive approach, the report aims to provide a thorough
+understanding of the principles, design methodologies, and practical applications of
+metamaterial-based microwave absorbers.</p>
+
+
+<h3 class="relative group">Theoretical Study 
+    <div id="theoretical-study" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#theoretical-study" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Metamaterials are artificially engineered materials
+with unique electromagnetic properties not found in nature. They are designed with
+specific geometrical structures that allow them to exhibit properties like negative
+refractive index, reverse Snell&rsquo;s law, and right/left-handed behavior. The first to
+coin the term of metamaterial absorbers was Victor Veselago.</p>
+<p>An MMA typically comprises three layers:</p>
 <ul>
-<li>A dielectric Substrate w/ a metal Resonance Layer*</li>
-<li>An Air Layer</li>
-<li>A Metal Copper Back-Plate</li>
+<li>A periodic metallic pattern on top</li>
+<li>A dielectric substrate in the middle</li>
+<li>A bottom metallic ground plane</li>
 </ul>
+<p>As multi-layer structures in MMAs enable broadband absorption by creating multiple
+resonant frequencies. By stacking different layers with varying properties, a wider
+range of frequencies can be absorbed effectively.</p>
+<p>Impedance matching is crucial for MMAs to minimize reflection and maximize absorption.
+This is achieved when the impedance of the MMA is matched to the impedance of free
+space, ensuring that incident electromagnetic waves are absorbed rather than
+reflected.</p>
+<p>In order to evaluate the absorption of the microwave metamaterial absorber proposed in
+this study the reflection and transmission power shall be calculated as well as the
+reflection coefficient. The bare necessary equations are shown in.</p>
+<p>$$
+Z = Z_0 \sqrt{\frac{\mu_r}{\epsilon_r}} \newline \newline
+\Gamma = \frac{Z - Z_0}{Z + Z_0}
+T = \frac{2Z_0}{Z + Z_0}
+A = 1 - |\Gamma|^2 - |T|^2
+$$</p>
 <p>*The metal resonance layer is technically an extra layer on top of the substrate and as a
 matter of fact it&rsquo;s the only layer above Z=0 for reasons that&rsquo;ll become obvious later on.</p>
 <p>At first placing the substrate without the resonance layer, then I&rsquo;ll place the two other
