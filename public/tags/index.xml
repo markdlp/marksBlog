@@ -31,21 +31,21 @@
     </item>
     
     <item>
-      <title>Example</title>
-      <link>http://localhost:1313/tags/example/</link>
+      <title>Interview</title>
+      <link>http://localhost:1313/tags/interview/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
-      <guid>http://localhost:1313/tags/example/</guid>
+      <guid>http://localhost:1313/tags/interview/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>Tag</title>
-      <link>http://localhost:1313/tags/tag/</link>
+      <title>Job</title>
+      <link>http://localhost:1313/tags/job/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
-      <guid>http://localhost:1313/tags/tag/</guid>
+      <guid>http://localhost:1313/tags/job/</guid>
       <description></description>
       
     </item>
@@ -56,6 +56,16 @@
       <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
       <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
       <guid>http://localhost:1313/tags/em/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Example</title>
+      <link>http://localhost:1313/tags/example/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/tags/example/</guid>
       <description></description>
       
     </item>
@@ -76,6 +86,16 @@
       <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
       <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
       <guid>http://localhost:1313/tags/psychology/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Tag</title>
+      <link>http://localhost:1313/tags/tag/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/tags/tag/</guid>
       <description></description>
       
     </item>
