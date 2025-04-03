@@ -22,8 +22,27 @@ At first in order for the product to be developed and shipped efficiently the co
 programming as it aligns well with sensitive customer data and is also quite agile. Also it shall be an attempt to democratize this sector as most competitive
 products are only implemented internally for their customers and are very closed source.
 
-### User's POV
-So as a user I need to be able to...
+### Creating Issues
+To create the correct issues is to do brainstorming in a narrow manner. In greater detail the issues describe the user experience and provide guidelines for the
+user interface.
 
-### Admin's POV
-As an admin I need to be able to...
+As a user I
+- want to see a basket with the products I order most commonly
+- want to see suggestions of probable products I may need
+- want to green light a recurring order with some basic necessities
+- want to chat with an agent to add products to my basket for a specific recipe or a function
+- want to set preferences like budget, calories etc.
+
+However it is also important to define an Administrator role to oversee the user-AI interaction.
+As an admin I
+- need to check for errors and prevent overflows
+- need to track stagnant orders
+- need to predict demand based on active orders
+- modify supply chains based on price fluctuations while fulfilling customer needs.
+
+Getting more specific a UML Diagram can describe the interface and the interactions.
+{{< mermaid >}}
+graph LR;
+A[Lemons]-->B[Lemonade];
+B-->C[Profit]
+{{< /mermaid >}}
