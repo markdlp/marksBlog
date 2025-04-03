@@ -11,13 +11,53 @@
     <copyright>© 2025 Mark Delaportas</copyright>
     <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/example/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>interview-exs</title>
+      <title>My Interview Exercises</title>
       <link>http://localhost:1313/posts/1743682567021-interview-exs/</link>
       <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
       <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
       <guid>http://localhost:1313/posts/1743682567021-interview-exs/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1743682567021-interview-exs/featured.png" />
+    </item>
+    
+    <item>
+      <title>A Random Experience</title>
+      <link>http://localhost:1313/posts/1735168514623-anxp/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/posts/1735168514623-anxp/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1735168514623-anxp/featured.png" />
+    </item>
+    
+    <item>
+      <title>The Calamity of Peireus Harbour</title>
+      <link>http://localhost:1313/posts/1735168562006-atharbour/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/posts/1735168562006-atharbour/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1735168562006-atharbour/featured.png" />
+    </item>
+    
+    <item>
+      <title>To Learn to Accept Someone</title>
+      <link>http://localhost:1313/posts/1735168484784-2accept/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/posts/1735168484784-2accept/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1735168484784-2accept/featured.png" />
+    </item>
+    
+    <item>
+      <title>Why I think car dependency is harmful</title>
+      <link>http://localhost:1313/posts/1735168453361-cardep/</link>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+      <author>markos.de.la.portas@gmail.com (Mark Delaportas)</author>
+      <guid>http://localhost:1313/posts/1735168453361-cardep/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/1735168453361-cardep/featured.png" />
     </item>
     
   </channel>

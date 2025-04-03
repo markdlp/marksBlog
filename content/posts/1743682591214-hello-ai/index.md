@@ -42,7 +42,9 @@ As an admin I
 
 Getting more specific a UML Diagram can describe the interface and the interactions.
 {{< mermaid >}}
-graph LR;
-A[Lemons]-->B[Lemonade];
-B-->C[Profit]
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
+    
 {{< /mermaid >}}
