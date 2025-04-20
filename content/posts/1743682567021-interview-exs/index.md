@@ -30,46 +30,46 @@ int main(int argc, const char* argv[], const char* envp[]) {
 }
 ```
 
-Now the next is to write a function that flips one specific bit of the word it takes as argument. For this; two options will be provided. One
-using XOR and one using NOT both bitwise.
-```c
-#include <stdio.h>
-#include <stdlib.h>
+Now the next is to write a function that flips one specific bit of the word it takes as argument. For this; while
+it is possible to perform the operation using NOT, it isn't advised, rather it is easier to create a mask and use
+the XOR operator to do the flip.
 
-void flip_bit_with_not(int *value, int bit_position) {
-    if (bit_position < 0 || bit_position >= (int)(sizeof(*value) * 8)) {
+For this a function shall be written that takes the binary argument as input:
+
+```c
+unsigned xor_flip(uint8_t *data, size_t size, int bit_position) {
+    
+    if (bit_position < 0 || bit_position >= (size * 8)) {
         fprintf(stderr, "Error: Bit position out of range\n");
         exit(1);
-    }
-    
-    // Save original bit state
-    int original_bit = (*value >> bit_position) & 1;
-    
-    // Flip ALL bits with NOT
-    *value = ~(*value);
-    
-    // Restore all bits except our target
-    if (original_bit) {
-        *value |= (1 << bit_position);  // Set if originally was 1
-    } else {
-        *value &= ~(1 << bit_position); // Clear if originally was 0
-    }
-}
+    } else ;
 
-int main(int argc, char *argv[]) {
-    if (argc != 3) {
-        printf("Usage: %s <number> <bit_position>\n", argv[0]);
-        return 1;
-    }
+    // Calculate byte and bit positions
+    int byte_pos = bit_position / 8;
+    int bit_in_byte = bit_position % 8;
+
+    // Flip the bit using XOR
+    return ((unsigned*)data)[byte_pos] ^ (1 << bit_in_byte);
+}
+```
+
+And for reference in the main function imports the variables as a command line argument:
+
+```c
+int main(int argc, const char* argv[], const char* envp[]) {
     
-    int num = atoi(argv[1]);
-    int bit_pos = atoi(argv[2]);
+    if (argc == 1) exit(1) ;// Check if argument was provided
     
-    printf("Original: %d (0x%x)\n", num, num);
-    flip_bit_with_not(&num, bit_pos);
-    printf("After NOT flip: %d (0x%x)\n", num, num);
-    
+    uint8_t val = int2bin(atoi(argv[1])), pos = atoi(argv[2]);
+
+    printf( "Flipping bit in little endian position %d of value: "BYTE_TO_BINARY_PATTERN
+        " using XOR -> Result: "BYTE_TO_BINARY_PATTERN"\n", pos, BYTE_TO_BINARY(val), 
+        BYTE_TO_BINARY(xor_flip(&val, sizeof(val), pos))
+    );
+
     return 0;
 }
 ```
-...
+
+There are also some code not shown here that makes it so that the cli arguments can be converted
+and presented as binary and everything can be found [here](./c/main.c).

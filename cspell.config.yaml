@@ -3,6 +3,7 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - atoi
   - autorun
   - bierner
   - budparr
@@ -12,12 +13,15 @@ words:
   - eamodio
   - edgedevtools
   - emojisense
+  - envp
   - esbenp
+  - fprintf
   - johnpapa
   - katex
   - lhci
   - metamaterials
   - souldn't
+  - stdlib
   - syms
   - tamasfe
   - textrm
