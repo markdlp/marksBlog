@@ -1,37 +1,37 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
+
+#define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+#define BYTE_TO_BINARY(byte)  \
+  ((byte) & 0x80 ? '1' : '0'), \
+  ((byte) & 0x40 ? '1' : '0'), \
+  ((byte) & 0x20 ? '1' : '0'), \
+  ((byte) & 0x10 ? '1' : '0'), \
+  ((byte) & 0x08 ? '1' : '0'), \
+  ((byte) & 0x04 ? '1' : '0'), \
+  ((byte) & 0x02 ? '1' : '0'), \
+  ((byte) & 0x01 ? '1' : '0') 
+
+unsigned int int2bin(unsigned int k) {
+    return (k == 0 || k == 1 ? k : ((k % 2) + 10 * int2bin(k / 2)));
+}
 
 int sum2zero(int n) {return (n < 1) ? 0 : n + sum2zero(n - 1);}
 
-unsigned char* xor_flip(void *data, size_t size, int bit_position) {
+unsigned xor_flip(uint8_t *data, size_t size, int bit_position) {
     
-    if (bit_position < 0 || bit_position >= (int)(size * 8)) {
+    if (bit_position < 0 || bit_position >= (size * 8)) {
         fprintf(stderr, "Error: Bit position out of range\n");
         exit(1);
-    }
+    } else ;
 
     // Calculate byte and bit positions
     int byte_pos = bit_position / 8;
     int bit_in_byte = bit_position % 8;
 
     // Flip the bit using XOR
-    return ((unsigned char *)data)[byte_pos] ^ (1 << bit_in_byte);
-}
-
-void not_flip(int *value, int bit_position) {
-    if (bit_position < 0 || bit_position >= (int)(sizeof(*value) * 8)) {
-        fprintf(stderr, "Error: Bit position out of range\n");
-        exit(1);
-    }
-    
-    // Save original bit state
-    int original_bit = (*value >> bit_position) & 1;
-    
-    // Flip ALL bits with NOT
-    *value = ~(*value);
-    
-    // Restore all bits except our target    
-    return (original_bit) ? *value |= (1 << bit_position) : *value &= ~(1 << bit_position) ;
+    return ((unsigned*)data)[byte_pos] ^ (1 << bit_in_byte);
 }
 
 int main(int argc, const char* argv[], const char* envp[]) {
@@ -45,7 +45,12 @@ int main(int argc, const char* argv[], const char* envp[]) {
     // ~~~~~~~~~~~~~~~~~~~~~XOR FLIP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (argc != 4) exit(1);
 
-    // value = (~value ^ ~(1 << bit_position)) ^ (1 << bit_position);
+    uint8_t val = int2bin(atoi(argv[2])), pos = atoi(argv[3]);
+
+    printf( "Flipping bit in little endian position %d of value: "BYTE_TO_BINARY_PATTERN
+        " using XOR -> Result: "BYTE_TO_BINARY_PATTERN"\n", pos, BYTE_TO_BINARY(val), 
+        BYTE_TO_BINARY(xor_flip(&val, sizeof(val), pos))
+    );
 
     return 0;
 }

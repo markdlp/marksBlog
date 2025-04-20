@@ -108,7 +108,7 @@
     "keywords": ["job","interview"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "303"
+    "wordCount": "377"
   }]
   </script>
 
@@ -461,7 +461,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-04-03T00:00:00&#43;00:00">2025 April 3</time><span class="px-2 text-primary-500">&middot;</span><span>303 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+  <time datetime="2025-04-03T00:00:00&#43;00:00">2025 April 3</time><span class="px-2 text-primary-500">&middot;</span><span>377 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
   
 
   
@@ -668,8 +668,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#disclaimer">Disclaimer</a></li>
-        <li><a href="#exercises">Exercises</a></li>
+        <li><a href="#disclaimer"><em>Disclaimer</em></a></li>
+        <li><a href="#exercise-in-simple-c">Exercise in simple C</a></li>
+        <li><a href="#exercise-in-telecommunications">Exercise in Telecommunications</a></li>
       </ul>
     </li>
   </ul>
@@ -687,8 +688,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#disclaimer">Disclaimer</a></li>
-        <li><a href="#exercises">Exercises</a></li>
+        <li><a href="#disclaimer"><em>Disclaimer</em></a></li>
+        <li><a href="#exercise-in-simple-c">Exercise in simple C</a></li>
+        <li><a href="#exercise-in-telecommunications">Exercise in Telecommunications</a></li>
       </ul>
     </li>
   </ul>
@@ -736,7 +738,7 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h3 class="relative group">Disclaimer 
+<h3 class="relative group"><em>Disclaimer</em> 
     <div id="disclaimer" class="anchor"></div>
     
     <span
@@ -749,13 +751,13 @@
 <p>I don&rsquo;t want to reveal the names and positions of the organizations I&rsquo;m pursuing but this may roughly emerge as I lay the exercises and my attempts.</p>
 
 
-<h3 class="relative group">Exercises 
-    <div id="exercises" class="anchor"></div>
+<h3 class="relative group">Exercise in simple C 
+    <div id="exercise-in-simple-c" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#exercises" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#exercise-in-simple-c" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -776,47 +778,53 @@ Using the ternary operator we can type a one liner like:</p>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Now the next is to write a function that flips one specific bit of the word it takes as argument. For this; two options will be provided. One
-using XOR and one using NOT both bitwise.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">flip_bit_with_not</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">value</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bit_position</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">bit_position</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">bit_position</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">))</span> <span class="p">{</span>
+</span></span></code></pre></div><p>Now the next is to write a function that flips one specific bit of the word it takes as argument. For this; while
+it is possible to perform the operation using NOT, it isn&rsquo;t advised, rather it is easier to create a mask and use
+the XOR operator to do the flip.</p>
+<p>For this a function shall be written that takes the binary argument as input:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="nf">xor_flip</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bit_position</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">bit_position</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">bit_position</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="mi">8</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&#34;Error: Bit position out of range</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Save original bit state
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">original_bit</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">value</span> <span class="o">&gt;&gt;</span> <span class="n">bit_position</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Flip ALL bits with NOT
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">value</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1">// Restore all bits except our target
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">original_bit</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="o">*</span><span class="n">value</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_position</span><span class="p">);</span>  <span class="c1">// Set if originally was 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="o">*</span><span class="n">value</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_position</span><span class="p">);</span> <span class="c1">// Clear if originally was 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Usage: %s &lt;number&gt; &lt;bit_position&gt;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Calculate byte and bit positions
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">byte_pos</span> <span class="o">=</span> <span class="n">bit_position</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">bit_in_byte</span> <span class="o">=</span> <span class="n">bit_position</span> <span class="o">%</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Flip the bit using XOR
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="p">((</span><span class="kt">unsigned</span><span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">)[</span><span class="n">byte_pos</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_in_byte</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And for reference in the main function imports the variables as a command line argument:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[],</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">envp</span><span class="p">[])</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">bit_pos</span> <span class="o">=</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Original: %d (0x%x)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">flip_bit_with_not</span><span class="p">(</span><span class="o">&amp;</span><span class="n">num</span><span class="p">,</span> <span class="n">bit_pos</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;After NOT flip: %d (0x%x)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="nf">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">;</span><span class="c1">// Check if argument was provided
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="kt">uint8_t</span> <span class="n">val</span> <span class="o">=</span> <span class="nf">int2bin</span><span class="p">(</span><span class="nf">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="n">pos</span> <span class="o">=</span> <span class="nf">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span> <span class="s">&#34;Flipping bit in little endian position %d of value: &#34;</span><span class="n">BYTE_TO_BINARY_PATTERN</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34; using XOR -&gt; Result: &#34;</span><span class="n">BYTE_TO_BINARY_PATTERN</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="nf">BYTE_TO_BINARY</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">        <span class="nf">BYTE_TO_BINARY</span><span class="p">(</span><span class="nf">xor_flip</span><span class="p">(</span><span class="o">&amp;</span><span class="n">val</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">pos</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>&hellip;</p>
+</span></span></code></pre></div><p>There are also some code not shown here that makes it so that the cli arguments can be converted
+and presented as binary and everything can be found <a href="./c/main.c">here</a>.</p>
+
+
+<h3 class="relative group">Exercise in Telecommunications 
+    <div id="exercise-in-telecommunications" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#exercise-in-telecommunications" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>In this exercise a few examples will be provided regarding residual sync&hellip;</p>
 
           
           
