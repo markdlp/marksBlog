@@ -41,10 +41,33 @@ As an admin I
 - modify supply chains based on price fluctuations while fulfilling customer needs.
 
 Getting more specific a UML Diagram can describe the interface and the interactions.
+In grater detail to properly make the product the _Use Case_ and _Sequence_ diagrams shall be constructed.
+
 {{< mermaid >}}
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
+    actor User
+    participant Web Application
+    participant Backend System
+    participant Database
+
+    User->>Web Application: Logs in/Opens Grocery List
+    Web Application->>Backend System: Retrieves User's Common Items
+    Backend System->>Database: Queries Purchase History
+    Database-->>Backend System: Returns Frequent Items
+    Backend System-->>Web Application: Displays Common Items in Basket
+    User->>Web Application: Adjusts Quantities/Adds Items
+    User->>Web Application: Requests Product Suggestions
+    Web Application->>Backend System: Requests Product Suggestions (based on history, preferences)
+    Backend System->>Database: Queries Product Catalog & User Data
+    Database-->>Backend System: Returns Suggested Products
+    Backend System-->>Web Application: Displays Product Suggestions
+    User->>Web Application: Adds Suggested Items to Basket
+    User->>Web Application: Initiates Checkout
+    Web Application->>Backend System: Creates Order
+    Backend System->>Database: Updates Inventory & Creates Order Record
+    Backend System-->>Web Application: Displays Order Confirmation
+    Web Application-->>User: Order Confirmation
     
 {{< /mermaid >}}
+
+What is something of a debate; if the Chatbot/Agent shall gain an Actor role in the aforementioned diagrams...

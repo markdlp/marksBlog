@@ -108,7 +108,7 @@
     "keywords": ["AI","101"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "397"
+    "wordCount": "516"
   }]
   </script>
 
@@ -401,7 +401,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/1743682591214-hello-ai/featured_hu_ef3f22cbc3420b6e.png);">
+    style="background-image:url(/posts/1743682591214-hello-ai/featured_hu_bf6e713bebdb2e71.png);">
     
 
 
@@ -472,7 +472,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-04-03T00:00:00&#43;00:00">2025 April 3</time><span class="px-2 text-primary-500">&middot;</span><span>397 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+  <time datetime="2025-04-03T00:00:00&#43;00:00">2025 April 3</time><span class="px-2 text-primary-500">&middot;</span><span>516 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
   
 
   
@@ -803,16 +803,36 @@ As an admin I</p>
 <li>modify supply chains based on price fluctuations while fulfilling customer needs.</li>
 </ul>
 <p>Getting more specific a UML Diagram can describe the interface and the interactions.
+In grater detail to properly make the product the <em>Use Case</em> and <em>Sequence</em> diagrams shall be constructed.</p>
 <div class="mermaid" align="center">
   
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
+    actor User
+    participant Web Application
+    participant Backend System
+    participant Database
+
+    User->>Web Application: Logs in/Opens Grocery List
+    Web Application->>Backend System: Retrieves User's Common Items
+    Backend System->>Database: Queries Purchase History
+    Database-->>Backend System: Returns Frequent Items
+    Backend System-->>Web Application: Displays Common Items in Basket
+    User->>Web Application: Adjusts Quantities/Adds Items
+    User->>Web Application: Requests Product Suggestions
+    Web Application->>Backend System: Requests Product Suggestions (based on history, preferences)
+    Backend System->>Database: Queries Product Catalog & User Data
+    Database-->>Backend System: Returns Suggested Products
+    Backend System-->>Web Application: Displays Product Suggestions
+    User->>Web Application: Adds Suggested Items to Basket
+    User->>Web Application: Initiates Checkout
+    Web Application->>Backend System: Creates Order
+    Backend System->>Database: Updates Inventory & Creates Order Record
+    Backend System-->>Web Application: Displays Order Confirmation
+    Web Application-->>User: Order Confirmation
     
 
 </div>
-</p>
+
 
           
           
