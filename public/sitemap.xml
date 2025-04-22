@@ -3,6 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://localhost:1313/posts/1743682591214-hello-ai/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/1743682567021-interview-exs/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/1735168514623-anxp/</loc>
     <lastmod>2024-12-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
