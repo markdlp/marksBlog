@@ -3,12 +3,29 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - atoi
   - autorun
+  - bierner
+  - budparr
+  - devcontainers
+  - disp
   - dpkg
+  - eamodio
+  - edgedevtools
+  - emojisense
+  - envp
+  - esbenp
+  - fprintf
+  - johnpapa
   - katex
   - lhci
   - metamaterials
   - souldn't
+  - stdlib
+  - syms
+  - tamasfe
+  - textrm
   - vertica
+  - yzhang
 ignoreWords: []
 import: []
