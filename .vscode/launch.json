@@ -1,51 +1,14 @@
 {
-    "version": "0.2.0",
+    "version": "2.0.0",
     "configurations": [
         {
             "type": "firefox",
             "request": "launch",
-            "reAttach": true,
-            "name": "Launch Firefox (Dev Edition)",
-            "url": "http://localhost:1313/",
-            "webRoot": "${workspaceFolder}",
-            "pathMappings": [
-                {
-                    "url": "http://localhost:1313",
-                    "path": "${workspaceFolder}"
-                }
-            ],
-            "firefoxExecutable": "/usr/bin/firefox-devedition",
-            "preLaunchTask": "start server"
-        },
-        {
-            "type": "msedge",
-            "name": "Launch Microsoft Edge",
-            "request": "launch",
+            "name": "Launch localhost",
             "url": "http://localhost:1313",
-            "presentation": {
-                "hidden": true
-            },
             "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "start server"
-        },
-        {
-            "type": "vscode-edge-devtools.debug",
-            "name": "Open Edge DevTools",
-            "request": "attach",
-            "url": "http://localhost:1313",
-            "presentation": {
-                "hidden": true
-            },
-            "webRoot": "${workspaceFolder}"
-        }
-    ],
-    "compounds": [
-        {
-            "name": "Launch Edge and attach DevTools",
-            "configurations": [
-                "Launch Microsoft Edge",
-                "Open Edge DevTools"
-            ]
+            "preLaunchTask": "start server",
+            "postDebugTask": "stop server",
         }
     ]
 }

@@ -3,29 +3,32 @@
     "tasks": [
         {
             "label": "start server",
-            "command": "hugo",
             "type": "shell",
+            "command": "hugo",
             "args": [
                 "server",
                 "--buildDrafts",
                 "--buildFuture",
+                "--bind=0.0.0.0",
                 "--baseURL=http://localhost:1313",
                 "--port",
                 "1313",
                 "--noTimes"
             ],
+            "isBackground": true,
             "presentation": {
                 "reveal": "always",
                 "panel": "dedicated"
             },
-            "isBackground": true,
             "problemMatcher": [
                 {
                     "owner": "hugo",
-                    "fileLocation": "absolute",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}"
+                    ],
                     "pattern": {
-                        "regexp": "^(Error):.*\"(.*?):(\\d*):(\\d*)\": (.*)",
-                        "severity": 1,
+                        "regexp": "^Error: (.*): (.*):(\\d+):(\\d+): (.*)$",
                         "file": 2,
                         "line": 3,
                         "column": 4,
@@ -34,11 +37,18 @@
                     "background": {
                         "activeOnStart": false,
                         "beginsPattern": "^Start building .*",
-                        "endsPattern": "^Total in .*"
+                        "endsPattern": "^",
                     }
                 }
             ],
-            "group": "build"
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
