@@ -1,20 +1,15 @@
-# .github/workflows/gh-pages.yml
-
 name: GitHub Pages
 
 on:
   push:
     branches:
       - master
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 concurrency:
-  group: "pages" # ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: true # Changed to true: cancels old builds if you push 2x quickly
 
-# Default to bash
 defaults:
   run:
     shell: bash
@@ -22,24 +17,34 @@ defaults:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.154.5
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Updated to v4
         with:
-          submodules: true
+          submodules: recursive # 'recursive' is safer for themes
           fetch-depth: 0
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.154.5" # IMPORTANT: Match your Dev Container version
+          extended: true
+
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4 # Updated to v4
+
+      # Optional: This speeds up builds by caching Hugo modules
+      - name: Cache Hugo modules
+        uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
+
       - name: Build
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
@@ -47,8 +52,9 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3 # This one is still v3 (stable)
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
