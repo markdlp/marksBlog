@@ -6,13 +6,14 @@ description: "As I'm ~struggling~ trying to find a job opportunity I have landed
 tags: ["job", "interview"]
 ---
 
-### _Disclaimer_
+## _Disclaimer_
 I don't want to reveal the names and positions of the organizations I'm pursuing but this may roughly emerge as I lay the exercises and my attempts.
 
 ### Exercise in simple C
 
 Starting of with some basic ones I was asked to write a recursive function that computes the sum of a number with all the smaller ones till zero.
 Using the ternary operator we can type a one liner like:
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>

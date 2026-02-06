@@ -9,13 +9,14 @@
                 "server",
                 "--buildDrafts",
                 "--buildFuture",
-                "--noHTTPCache",
-                "--noTimes",
+                "--baseURL=http://localhost:1313",
                 "--port",
                 "1313",
+                "--noTimes"
             ],
             "presentation": {
                 "reveal": "always",
+                "panel": "dedicated"
             },
             "isBackground": true,
             "problemMatcher": [
@@ -28,29 +29,12 @@
                         "file": 2,
                         "line": 3,
                         "column": 4,
-                        "message": 5,
+                        "message": 5
                     },
                     "background": {
                         "activeOnStart": false,
                         "beginsPattern": "^Start building .*",
-                        "endsPattern": "^", /*Dont match anything*/
-                    }
-                },{
-                    "owner": "hugo",
-                    "fileLocation": "absolute",
-                    "pattern": {
-                        "regexp": "^(ERROR).*\"(.*?):(\\d*):(\\d*)\": (.*)",
-                        "severity": 1,
-                        "file": 2,
-                        "line": 3,
-                        "column": 4,
-                        "message": 5,
-                        "loop": true,
-                    },
-                    "background": {
-                        "activeOnStart": false,
-                        "beginsPattern": "Change detected.*",
-                        "endsPattern": "Total in .*",
+                        "endsPattern": "^Total in .*"
                     }
                 }
             ],
