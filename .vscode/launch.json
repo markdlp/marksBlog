@@ -1,14 +1,32 @@
 {
-    "version": "2.0.0",
+    "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Firefox Debugger",
             "type": "firefox",
             "request": "launch",
-            "name": "Launch localhost",
             "url": "http://localhost:1313",
             "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "start server",
-            "postDebugTask": "stop server",
-        }
+            "presentation": {
+                "hidden": false,
+                "group": "",
+                "order": 1
+            }
+        },
+        {
+            "name": "Debug Edge (Headless)",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:1313",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+                "--remote-debugging-port=9222",
+                // This line fixes the 'profile missing' crash:
+                "--user-data-dir=/tmp/vscode-edge-profile-debug"
+            ],
+            "preLaunchTask": "start server"
+        },
     ]
 }
