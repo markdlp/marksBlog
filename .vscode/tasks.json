@@ -20,6 +20,12 @@
                 "reveal": "always",
                 "panel": "dedicated"
             },
+            // THIS is what launches your Ubuntu Firefox
+            "serverReadyAction": {
+                "pattern": "Web Server is available at",
+                "uriFormat": "%s",
+                "action": "openExternally"
+            },
             "problemMatcher": [
                 {
                     "owner": "hugo",
@@ -35,16 +41,12 @@
                         "message": 5
                     },
                     "background": {
-                        "activeOnStart": false,
-                        "beginsPattern": "^Start building .*",
-                        "endsPattern": "^",
+                        "activeOnStart": true,
+                        "beginsPattern": "^Start building sites.*",
+                        "endsPattern": "^Total in.*"
                     }
                 }
             ],
-            "runOptions": {
-                "runOn": "folderOpen",
-                "instanceLimit": 1
-            },
             "group": {
                 "kind": "build",
                 "isDefault": true

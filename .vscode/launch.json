@@ -2,16 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Firefox Debugger",
-            "type": "firefox",
+            "name": "Launch Site (Host Browser)",
+            "type": "node",
             "request": "launch",
-            "url": "http://localhost:1313",
-            "webRoot": "${workspaceFolder}",
-            "presentation": {
-                "hidden": false,
-                "group": "",
-                "order": 1
-            }
+            "runtimeExecutable": "echo",
+            "runtimeArgs": [
+                "Server Starting..."
+            ],
+            "preLaunchTask": "start server" // Triggers the task that opens the browser
         },
         {
             "name": "Debug Edge (Headless)",
