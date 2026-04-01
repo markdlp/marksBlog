@@ -53,6 +53,11 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
+      - name: Validate HTML
+        run: |
+          wget --spider -r -nd -nv -l 5 ${GITHUB_STEP_BASE_URL}
+          # Optionally, you could use tools like html-proofer for more control.
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3 # This one is still v3 (stable)
         if: ${{ github.ref == 'refs/heads/master' }}
