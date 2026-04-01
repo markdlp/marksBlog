@@ -55,7 +55,7 @@ jobs:
 
       - name: Validate HTML
         run: |
-          wget --spider -r -nd -nv -l 5 ${GITHUB_STEP_BASE_URL}
+          wget --spider -r -nd -nv -l 5 "${{ steps.pages.outputs.base_url }}"
           # Optionally, you could use tools like html-proofer for more control.
 
       - name: Deploy
