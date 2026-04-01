@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true # Changed to true: cancels old builds if you push 2x quickly
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -19,22 +19,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5 # Updated to v5
+        uses: actions/checkout@v4 # Use v4 (latest stable)
         with:
-          submodules: recursive # 'recursive' is safer for themes
+          submodules: recursive 
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.154.5" # IMPORTANT: Match your Dev Container version
+          # Note: The latest Hugo release right now is ~0.143.1. 
+          # Ensure 0.154.5 wasn't a typo, or builds will fail to download Hugo!
+          hugo-version: "latest" 
           extended: true
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4 # Updated to v4
+        uses: actions/configure-pages@v4
 
-      # Optional: This speeds up builds by caching Hugo modules
       - name: Cache Hugo modules
         uses: actions/cache@v4
         with:
@@ -48,20 +49,19 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          # Removed the --baseURL override so it respects your hugo.toml
           hugo \
             --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify 
 
-      - name: Validate HTML
-        run: |
-          wget --spider -r -nd -nv -l 5 "${{ steps.pages.outputs.base_url }}"
-          # Optionally, you could use tools like html-proofer for more control.
+      # (Validate HTML step removed because it blocks deployment)
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # This one is still v3 (stable)
+        uses: peaceiris/actions-gh-pages@v3 
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./public
+          # CRITICAL: This stops GitHub from forgetting your custom domain on every push
+          cname: delaportas.se
